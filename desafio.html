@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barra Lateral con Logo y Menú Hamburguesa</title>
+  <style>
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      transition: margin-left 0.3s;
+    }
+
+  
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #2D2C27;
+      overflow-x: hidden;
+      transition: 0.3s;
+      padding-top: 20px;
+      color: white;
+      z-index: 2;
+    }
+
+
+    .sidebar .logo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .sidebar .logo img {
+      width: 60px;
+      height: auto;
+    }
+
+
+    .sidebar a {
+      display: block;
+      color: rgb(255, 254, 251);
+      padding: 15px 20px;
+      text-decoration: none;
+      font-size: 18px;
+      text-align: left;
+      border-bottom: 1px solid #fdfdfc;
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+      background-color: #575757;
+    }
+
+
+    .menu-btn {
+      font-size: 30px;
+      color: rgb(44, 28, 3);
+      position: absolute;
+      top: 15px;
+      left: 20px;
+      cursor: pointer;
+      z-index: 3;
+    }
+
+    .menu-btn div {
+      width: 35px;
+      height: 5px;
+      background-color: #6b6a69;
+      margin: 6px 0;
+      transition: 0.4s;
+    }
+
+
+    .main-content {
+      transition: margin-left 0.3s;
+      padding: 20px;
+    }
+
+
+    .sidebar.open {
+      width: 250px;
+    }
+
+    .sidebar.open ~ .main-content {
+      margin-left: 250px;
+    }
+  </style>
+</head>
+<body>
+
+
+  <div class="menu-btn" onclick="toggleSidebar()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+
+  <div class="sidebar" id="sidebar">
+
+    <div class="logo">
+      <img src="../desafiyo 1/img/descarga.jfif" alt="Logo" style="border-radius: 50%;">
+    </div>
+    
+
+    <a href="#inicio" style="color: #B99C7B;font-family: cursive;">Inicio</a>
+    <a href="#tours" style="color: #B99C7B;font-family: cursive;">Tours</a>
+    <a href="#contacto" style="color: #B99C7B;font-family: cursive;">Contacto</a>
+  </div>
+
+
+  <div class="main-content" style="text-align: center;">
+    <h1 style="color: #fdfdfc;font-family: 'Courier New', Courier, monospace;text-align: center;background-color: #574231;">Bienvenidos a nuestro sitio web</h1>
+    <p style="color: #fdfdfc;font-family: cursive;">Explora nuestros increíbles tours y contáctanos para más información.</p>
+  </div>
+
+  <script>
+
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('open');
+    }
+  </script>
+
+</body>
+<body style="background-color: #A88B7D;">
+<div>
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collage de Imágenes</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+
+        .collage {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 10px;
+            padding: 20px;
+        }
+
+
+        .collage img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
+        }
+
+
+        .collage img:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="collage">
+    
+        <img src="../desafiyo 1/img/mapchupichu.jfif" alt="Imagen 1">
+        <img src="../desafiyo 1/img/paris.jfif" alt="Imagen 2">
+        <img src="../desafiyo 1/img/piramede maya.jfif" alt="Imagen 3">
+        <img src="../desafiyo 1/img/piramides de egipto.jfif" alt="Imagen 4">
+        <img src="../desafiyo 1/img/piramide.jfif" alt="Imagen 5">
+        <img src="../desafiyo 1/img/carro.jfif" alt="Imagen 6">
+        <img src="../desafiyo 1/img/pelaje.jfif" alt="Imagen 6">
+    </div>
+
+</body>
+</html>
+
+</div>
+</body>
+</html>
+
