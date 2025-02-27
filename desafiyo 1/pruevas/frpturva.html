@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zona de Contactos y Menú</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            transition: margin-left 0.3s;
+            background-color: #f4f4f4;
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #2D2C27;
+            overflow-x: hidden;
+            transition: 0.3s;
+            padding-top: 20px;
+            color: white;
+            z-index: 2;
+        }
+
+        .sidebar .logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .sidebar .logo img {
+            width: 60px;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        .sidebar a {
+            display: block;
+            color: #B99C7B;
+            padding: 15px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            font-family: cursive;
+            text-align: left;
+            border-bottom: 1px solid #fdfdfc;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+
+        .menu-btn {
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            cursor: pointer;
+            z-index: 3;
+        }
+
+        .menu-btn div {
+            width: 35px;
+            height: 5px;
+            background-color: #6b6a69;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+
+        .menu-btn.open div:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .menu-btn.open div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-btn.open div:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        .main-content {
+            transition: margin-left 0.3s;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .sidebar.open {
+            width: 250px;
+        }
+
+        .sidebar.open ~ .main-content {
+            margin-left: 250px;
+        }
+
+        .contact-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .contact {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #007bff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .contact-info {
+            position: absolute;
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            display: none;
+        }
+
+        .contact:focus .contact-info,
+        .contact:hover .contact-info {
+            display: block;
+        }
+
+        .footer {
+            width: 100%;
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            position: fixed;
+            bottom: 0;
+        }
+
+        /* Collage Section */
+        .collage {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 10px;
+            padding: 20px;
+        }
+
+        .collage img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
+        }
+
+        .collage img:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+
+        body {
+            background-color: #A88B7D;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar and Menu Button -->
+    <div class="menu-btn" onclick="toggleSidebar()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <div class="sidebar" id="sidebar">
+        <div class="logo">
+            <img src="../desafiyo 1/img/descarga.jfif" alt="Logo">
+        </div>
+
+        <a href="#inicio">Inicio</a>
+        <a href="#tours">Tours</a>
+        <a href="#contacto">Contacto</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h1 style="color: #fdfdfc; font-family: 'Courier New', Courier, monospace; background-color: #574231;">Bienvenidos a nuestro sitio web</h1>
+        <p style="color: #fdfdfc; font-family: cursive;">Explora nuestros increíbles tours y contáctanos para más información.</p>
+
+        <!-- Contact Section -->
+        <div class="contact-container">
+            <div class="contact" tabindex="0">📞
+                <div class="contact-info">Tel: 123-456-789</div>
+            </div>
+            <div class="contact" tabindex="0">✉️
+                <div class="contact-info">Email: correo@example.com</div>
+            </div>
+            <div class="contact" tabindex="0">📍
+                <div class="contact-info">Ubicación: Ciudad, País</div>
+            </div>
+        </div>
+
+        <!-- Collage of Images -->
+        <div class="collage">
+            <img src="../desafiyo 1/img/mapchupichu.jfif" alt="Imagen 1">
+            <img src="../desafiyo 1/img/paris.jfif" alt="Imagen 2">
+            <img src="../desafiyo 1/img/piramede maya.jfif" alt="Imagen 3">
+            <img src="../desafiyo 1/img/piramides de egipto.jfif" alt="Imagen 4">
+            <img src="../desafiyo 1/img/piramide.jfif" alt="Imagen 5">
+            <img src="../desafiyo 1/img/carro.jfif" alt="Imagen 6">
+            <img src="../desafiyo 1/img/pelaje.jfif" alt="Imagen 7">
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        Información adicional - Contacto: info@ejemplo.com | Tel: 987-654-321
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const menuBtn = document.querySelector('.menu-btn');
+            sidebar.classList.toggle('open');
+            menuBtn.classList.toggle('open');
+        }
+    </script>
+
+</body>
+
+</html>

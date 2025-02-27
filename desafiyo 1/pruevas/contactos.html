@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zona de Contactos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .contact-container {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .contact {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #007bff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .contact-info {
+            position: absolute;
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            display: none;
+        }
+        .contact:focus .contact-info,
+        .contact:hover .contact-info {
+            display: block;
+        }
+        .footer {
+            width: 100%;
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            position: fixed;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="contact-container">
+        <div class="contact" tabindex="0">📞
+            <div class="contact-info">Tel: 123-456-789</div>
+        </div>
+        <div class="contact" tabindex="0">✉️
+            <div class="contact-info">Email: correo@example.com</div>
+        </div>
+        <div class="contact" tabindex="0">📍
+            <div class="contact-info">Ubicación: Ciudad, País</div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        Información adicional - Contacto: info@ejemplo.com | Tel: 987-654-321
+    </div>
+</body>
+</html>
